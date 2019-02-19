@@ -1,0 +1,44 @@
+
+
+
+
+
+https://testapi.internet.bs/Domain/Check?ApiKey=B9X2G3Y5D3D8U1S3F1&Password=qwer1234&Domain=example.com
+
+https://api.internet.bs/Domain/Create?ApiKey=B9X2G3Y5D3D8U1S3F1&Password=qwer1234&Domain=1.eu&CloneContactsFromDomain=4uclan.eu
+
+
+Key
+dLDYsCifgHzp_RT89ecc3vFQLmxn49sG6rH
+
+Secret
+RT8cSqxK91NUDji6b2qaLM
+
+
+https://api.godaddy.com/v1/domains/available
+
+
+curl -X GET "https://api.ote-godaddy.com/v1/domains/available?domain=1.com&checkType=FAST&forTransfer=false" 
+-H "accept: application/json" 
+-H "Authorization: sso-key UzQxLikm_46KxDFnbjN7cQjmw6wocia:46L26ydpkwMaKZV6uVdDWe"
+
+
+<?php   
+    //curl命令 curl -X GET -H "Content-Type:application/json" -H "Authorization: token 4e56266f2502936e0378ea6a985dc74a5bec4280" http://user.endv.cn/v1/datastreams/plug-status/datapoint/   
+    $url = "http://user.endv.cn/v1/datastreams/plug-status/datapoint/";  
+        $header= array(                                                                            
+    'Content-Type: application/json',                                                                                  
+    'Authorization: token 4e56266f2502936e0378ea6a985dc74a5bec4280');  
+        $ch = curl_init();   
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');     
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);  
+    curl_setopt($ch, CURLOPT_URL, $url);  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
+          
+    $output = curl_exec($ch);  
+    curl_close($ch);  
+      
+    //打印获得的数据  
+    print_r($output);  
+      
+?> 

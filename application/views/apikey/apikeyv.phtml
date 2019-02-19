@@ -1,0 +1,93 @@
+﻿
+<?php include (APPLICATION_PATH."/application/views/header.phtml");?>
+<?php include (APPLICATION_PATH."/application/views/menu.phtml");?>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+     <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
+                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                    <a href="javascript:;" onclick="member_add('添加','apiAddv','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加</a></span>
+            <div class="mt-20">
+                <table class="table table-border table-bordered table-hover table-bg table-sort">
+                    <thead>
+                    <tr class="text-c">
+                        <th width="25"><input type="checkbox" name="" value=""></th>
+                        <th width="80">apikey</th>
+                        <th width="100">秘钥</th>
+                        <th width="100">管理</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($res as $values):?>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="1" name=""></td>
+                        <td><?=$values["keys"]?></td>
+                        <td><?=$values["password"]?></td>
+                        <td class="td-manage">
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','apikeyvEdit','<?=$values["id"]?>','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'<?=$values["id"]?>')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+</section>
+
+<?php include (APPLICATION_PATH."/application/views/js.phtml");?>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.table-sort').dataTable({
+            "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+            "bStateSave": true,//状态保存
+            "aoColumnDefs": [
+                //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+                // {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
+            ]
+        });
+        $('.table-sort tbody').on( 'click', 'tr', function () {
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        });
+    });
+    /*用户-添加*/
+    function member_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*用户-查看*/
+    /*用户-编辑*/
+    function member_edit(title,url,id,w,h){
+        url=url+"?id="+id;
+        layer_show(title,url,w,h);
+    }
+    /*密码-修改*/
+    function change_password(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*用户-删除*/
+    function member_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.get("delete?id="+id);
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+        });
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

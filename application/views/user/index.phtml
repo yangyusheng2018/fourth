@@ -1,0 +1,48 @@
+
+<?php include (APPLICATION_PATH."/application/views/header.phtml");?>
+<?php include (APPLICATION_PATH."/application/views/menu.phtml");?>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+
+<section class="Hui-article-box">
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <p class="f-20 text-success">欢迎<?=$_SESSION["name"]?></p>
+            <table class="table table-border table-bordered table-bg mt-20">
+                <thead>
+                <tr>
+                    <th colspan="2" scope="col">信息</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th width="30%">用户名</th>
+                    <td><span id="lbServerName"><?=$_SESSION["name"]?></span></td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td>192.168.1.1</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </article>
+        <footer class="footer">
+            <p> Copyright &copy;2019 H-ui.admin v3.0 All Rights Reserved.<br> 本后台系统由H-ui提供前端技术支持</p>
+        </footer>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<?php include (APPLICATION_PATH."/application/views/js.phtml");?>
+<!--此乃百度统计代码，请自行删除-->
+<script>
+    function editpassword(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+</script>
+<!--/此乃百度统计代码，请自行删除-->
+</body>
+</html>

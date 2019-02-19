@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/lib/respond.min.js"></script>
+    <![endif]-->
+    <link href="/static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
+    <link href="/static/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script><![endif]-->
+    <title>添加apikey</title>
+</head>
+<body>
+<div class="">
+    <div id="loginform" class="">
+        <form class="form form-horizontal" action="##" method="post" id="loginform" name="loginform">
+            <input id="id" name="id" hidden value="<?=$res["id"]?>">
+            <div class="row cl">
+                <label class="form-label col-xs-2">名称</label>
+                <div class="formControls col-xs-8">
+                    <input id="name" name="name" type="text" placeholder="name" class="input-text size-L" value="<?=$res["name"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">apikey</label>
+                <div class="formControls col-xs-8">
+                    <input id="apikey" name="apikey" type="text" placeholder="apikey" class="input-text size-L" value="<?=$res["apikey"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">联系邮箱</label>
+                <div class="formControls col-xs-8">
+                    <input id="con_email" name="con_email" type="text" value="<?=$res["con_email"]?>" class="input-text size-L">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">密码</label>
+                <div class="formControls col-xs-8">
+                    <input id="password" name="password" type="text" placeholder="password" class="input-text size-L" value="<?=$res["password"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">姓</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_firstname" name="registrant_firstname" type="text" placeholder="firstname" class="input-text size-L" value="<?=$res["registrant_firstname"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">名</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_lastname" name="registrant_lastname" type="text" placeholder="lastname" class="input-text size-L" value="<?=$res["registrant_lastname"]?>">
+                </div>
+            </div>
+<!--            <div class="row cl">-->
+<!--                <label class="form-label col-xs-2"></label>-->
+<!--                <div class="formControls col-xs-8">-->
+<!--                    <input id="registrant_organization" name="registrant_organization" type="text" placeholder="公司" class="input-text size-L">-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="row cl">
+                <label class="form-label col-xs-2">街道</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_street" name="registrant_street" type="text" placeholder="街道" class="input-text size-L" value="<?=$res["registrant_street"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">城市</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_city" name="registrant_city" type="text" placeholder="城市" class="input-text size-L" value="<?=$res["registrant_city"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">国家代码</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_countrycode" name="registrant_countrycode" type="text" placeholder="国家代码" class="input-text size-L" value="<?=$res["registrant_countrycode"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">邮编</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_postalcode" name="registrant_postalcode" type="text" placeholder="邮编" class="input-text size-L" value="<?=$res["registrant_postalcode"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">邮箱</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_email" name="registrant_email" type="text" placeholder="邮箱" class="input-text size-L" value="<?=$res["registrant_email"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-2">电话</label>
+                <div class="formControls col-xs-8">
+                    <input id="registrant_phonenumber" name="registrant_phonenumber" type="text" placeholder="电话" class="input-text size-L" value="<?=$res["registrant_phonenumber"]?>">
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="formControls col-xs-8 col-xs-offset-3">
+                    <input id="login" name="login" type="button" class="btn btn-success radius size-L" value="&nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#login').click(function(){
+            $.ajax({
+                url:'edit',
+                type:'POST',
+                // data:$('#loginform').serialize(),
+                data:{
+                    id:$("#id").val(),
+                    con_email:$("#con_email").val(),
+                    name:$("#name").val(),
+                    apikey:$("#apikey").val(),
+                    password:$("#password").val(),
+                    registrant_firstname:$("#registrant_firstname").val(),
+                    registrant_lastname:$("#registrant_lastname").val(),
+                    // registrant_organization:$("#registrant_organization").val(),
+                    registrant_street:$("#registrant_street").val(),
+                    registrant_city:$("#registrant_city").val(),
+                    registrant_countrycode:$("#registrant_countrycode").val(),
+                    registrant_postalcode:$("#registrant_postalcode").val(),
+                    registrant_email:$("#registrant_email").val(),
+                    registrant_phonenumber:$("#registrant_phonenumber").val(),
+                },
+                dataType:'json',
+                success:function(msg){
+                    if(msg.errno==1){
+                        alert(msg.errmsg);
+                        window.parent.location.reload(); //刷新父页面
+                        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                        parent.layer.close(index);  // 关闭layer
+                    }else{
+                        alert(msg.errmsg);
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+</body>
+</html>
